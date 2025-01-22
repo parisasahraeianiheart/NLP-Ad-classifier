@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nlp-ad-classifier
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nlp-ad-classifier
+  template:
+    metadata:
+      labels:
+        app: nlp-ad-classifier
+    spec:
+      containers:
+      - name: nlp-ad-classifier
+        image: your-docker-image
+        ports:
+        - containerPort: 5000
